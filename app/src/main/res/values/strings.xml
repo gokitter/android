@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Kitter</string>
+    <string name="kitterurl">kitter.demo.gs:50051</string>
+</resources>
