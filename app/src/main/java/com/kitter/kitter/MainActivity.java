@@ -8,10 +8,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import go.client.Client;
-
-import static go.client.Client.NewKitterClient;
-
+import go.clientfactory.Clientfactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
               }
           });
 
-        Client.KitterClient client = NewKitterClient(getString(R.string.kitterurl));
-        Client.KitterCallback callback = new Client.KitterCallback() {
+        Clientfactory.KitterClient client = Clientfactory.Create(getString(R.string.kitterurl));
+        Clientfactory.KitterCallback callback = new Clientfactory.KitterCallback() {
             @Override
             public void NewMessage(final String s) {
                 runOnUiThread(new Runnable() {
